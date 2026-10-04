@@ -1,0 +1,3 @@
+"""Transactional outbox for Django."""
+
+__version__ = "0.1.0"
