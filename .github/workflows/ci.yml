@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -e . ruff
+      - run: pip install -e . ruff==0.16.10
       - run: ruff check .
       - run: ruff format --check .
 
