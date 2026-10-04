@@ -42,10 +42,12 @@ INSTALLED_APPS = [..., "django_event_outbox"]
 from django.db import transaction
 from django_event_outbox import emit, handle
 
+
 @handle("order.placed")
 def on_order_placed(event):
-    webhooks.deliver(event.payload)   # your side effect
+    webhooks.deliver(event.payload)  # your side effect
     # or push to Kafka / SNS / a websocket group…
+
 
 def place_order(cart):
     with transaction.atomic():
